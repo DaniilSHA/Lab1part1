@@ -10,6 +10,7 @@ public class main {
 
         CountryInfo.printAll(countries);
 
+
     }
 
 }

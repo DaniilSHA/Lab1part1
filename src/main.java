@@ -6,6 +6,7 @@ public class main {
                 new CountryInfo("France", 643.8, 67.8, "Paris", 2.1),
                 new CountryInfo("Andorra", 467, 85.4, "Andorra la Vella", 22.6),
                 new CountryInfo("Singapore", 725, 5.7)
+
         };
 
         CountryInfo.printAll(countries);

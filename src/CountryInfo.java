@@ -1,9 +1,9 @@
 public class CountryInfo {
-    String name;
-    double square;
-    double population;
-    String capitalName;
-    double capitalPopulation;
+    private String name;
+    private double square;
+    private double population;
+    private String capitalName;
+    private double capitalPopulation;
 
     CountryInfo (String Na, double Sq, double Po, String caNa, double caPo) {
         name = Na;
@@ -18,73 +18,73 @@ public class CountryInfo {
         population = Po;
     }
 
-    String getName () {
+    public String getName () {
         return name;
     }
 
-    double getSquare () {
+    public double getSquare () {
         return square;
     }
 
-    double getPopulation () {
+    public double getPopulation () {
         return population;
     }
 
-    String getCapitalName () {
+    public String getCapitalName () {
         return capitalName;
     }
 
-    double getCapitalPopulation () {
+    public double getCapitalPopulation () {
         return capitalPopulation;
     }
 
-    double getDensity () {
+    public double getDensity () {
         return population / square;
     }
 
-    void setName (String setName) {
+    public void setName (String setName) {
         if (setName == "") throw new IllegalArgumentException ("название не должно быть пустой ссылкой");
         else name = setName;
     }
 
-    void setSquare (double setSquare) {
+    public void setSquare (double setSquare) {
         if (setSquare <= 0) throw new IllegalArgumentException ("площадь должна быть строго больше нуля;");
         else square = setSquare;
     }
 
-    void setPopulation (double setPopulation) {
+    public void setPopulation (double setPopulation) {
         if (setPopulation <= 0) throw new IllegalArgumentException ("население должно быть строго больше нуля;");
         else population = setPopulation;
     }
 
-    void setCapitalName (String setCapitalName) {
+    public void setCapitalName (String setCapitalName) {
         if (setCapitalName == "") throw new IllegalArgumentException ("название не должно быть пустой ссылкой");
         else capitalName = setCapitalName;
     }
 
-    void setCapitalPopulation (double setCapitalPopulation) {
+    public void setCapitalPopulation (double setCapitalPopulation) {
         if (setCapitalPopulation <= 0) throw new IllegalArgumentException ("население должно быть строго больше нуля;");
         else capitalPopulation = setCapitalPopulation;
     }
-    void resetCapitalIngo () {
+    public void resetCapitalIngo () {
         capitalName = null;
         capitalPopulation = 0;
     }
 
-    void setCapitalInfo (String name, double population) {
+    public void setCapitalInfo (String name, double population) {
         resetCapitalIngo();
         setCapitalName(name);
         setCapitalPopulation(population);
     }
 
-    void print () {
+    public void print () {
         if ((capitalName != null) & (capitalPopulation != 0))
-            System.out.println(name + "  " + square + "  " + population + "  " + capitalName + "  " + capitalPopulation);
-        else System.out.println(name + "  " + square + "  " + population);
+            System.out.println(name + ", " + square + "кв. км., " + population + "чел., " + capitalName + ", " + capitalPopulation + "чел.");
+        else System.out.println(name + ", " + square + "кв. км., " + population + "чел.");
 
     }
 
-    static void printAll (CountryInfo countries[]) {
+    public static void printAll (CountryInfo countries[]) {
         for (int i=0; i < countries.length; i++) {
             countries[i].print();
         }
